@@ -100,25 +100,13 @@ export interface Looping {
     mp4: string;
 }
 
-export enum Rating {
-    G = "g",
-    PG = "pg",
-}
+export type Rating = "g" | "pg";
 
-export enum SourceTLD {
-    Empty = "",
-    PhotobucketCOM = "photobucket.com",
-    RebloggyCOM = "rebloggy.com",
-    WWWYoutubeCOM = "www.youtube.com",
-}
+export type SourceTLD = "" | "photobucket.com" | "rebloggy.com" | "www.youtube.com";
 
-export enum TrendingDatetime {
-    The00000000000000 = "0000-00-00 00:00:00",
-}
+export type TrendingDatetime = "0000-00-00 00:00:00";
 
-export enum Type {
-    GIF = "gif",
-}
+export type Type = "gif";
 
 export interface User {
     avatar_url: string;
@@ -133,11 +121,7 @@ export interface User {
     is_verified: boolean;
 }
 
-export enum Username {
-    Empty = "",
-    Whiss = "whiss",
-}
-
+export type Username = "" | "whiss";
 export interface Meta {
     status: number;
     msg: string;
