@@ -1,14 +1,14 @@
 interface ScrambleState {
-    words: string[];
     currentWord: string;
-    scrambledWord: string;
-    guess: string;
-    points: number;
     errorCounter: number;
-    maxAllowErrors: number;
-    skipCounter: number;
-    maxSkips: number;
+    guess: string;
     isGameOver: boolean;
+    maxAllowErrors: number;
+    maxSkips: number;
+    points: number;
+    scrambledWord: string;
+    skipCounter: number;
+    words: string[];
     totalWords: number;
 }
 
@@ -52,19 +52,19 @@ export type ScrambleAction =
     | { type: 'PLAY_AGAIN'; payload: ScrambleState };
 
 export const getScrambleInitialState = (): ScrambleState => {
-    const shuffledWords = shuffleArray(GAME_WORDS);
+    const shuffledWords = shuffleArray([...GAME_WORDS]);
     return {
-        words: shuffledWords,
         currentWord: shuffledWords[0],
-        scrambledWord: scrambleWord(shuffledWords[0]),
-        guess: '',
-        points: 0,
         errorCounter: 0,
-        maxAllowErrors: 3,
-        skipCounter: 0,
-        maxSkips: 3,
+        guess: '',
         isGameOver: false,
-        totalWords: GAME_WORDS.length,
+        maxAllowErrors: 3,
+        maxSkips: 3,
+        points: 0,
+        scrambledWord: scrambleWord(shuffledWords[0]),
+        skipCounter: 0,
+        words: shuffledWords,
+        totalWords: shuffledWords.length,
     };
 };
 
