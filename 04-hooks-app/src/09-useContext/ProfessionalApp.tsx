@@ -1,13 +1,13 @@
 import { RouterProvider } from 'react-router';
 import { appRouter } from './router/app.router';
-import { UserContextProvider } from './context/UserContext';
+import { UserProvider } from './context/UserProvider';
 
 export const ProfessionalApp = () => {
     return (
-        <UserContextProvider>
+        <UserProvider>
             <div className="bg-gradient">
                 <RouterProvider router={appRouter} />
             </div>
-        </UserContextProvider>
+        </UserProvider>
     );
 };
